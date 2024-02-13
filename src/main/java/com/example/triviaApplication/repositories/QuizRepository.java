@@ -16,6 +16,7 @@ import java.util.Optional;
 public interface QuizRepository extends JpaRepository<Quiz, Long> {
     List<Quiz> findByUserId(Long userId);
     Quiz findByIdAndUserId(Long id, Long userId);
+    long countByUserId(Long userId);
 
     // Update quiz
     @Modifying

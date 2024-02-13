@@ -1,48 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="trivia_explosion@localhost">
   <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.51">
-    <root id="1">
-      <DefaultCasing>lower/lower</DefaultCasing>
-      <DefaultEngine>InnoDB</DefaultEngine>
-      <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
-      <Grants>trivia|schema||trivia_explosion|localhost|ALTER|G
-trivia|schema||trivia_explosion|localhost|ALTER ROUTINE|G
-trivia|schema||trivia_explosion|localhost|CREATE|G
-trivia|schema||trivia_explosion|localhost|CREATE ROUTINE|G
-trivia|schema||trivia_explosion|localhost|CREATE TEMPORARY TABLES|G
-trivia|schema||trivia_explosion|localhost|CREATE VIEW|G
-trivia|schema||trivia_explosion|localhost|DELETE|G
-trivia|schema||trivia_explosion|localhost|DROP|G
-trivia|schema||trivia_explosion|localhost|EVENT|G
-trivia|schema||trivia_explosion|localhost|EXECUTE|G
-trivia|schema||trivia_explosion|localhost|INDEX|G
-trivia|schema||trivia_explosion|localhost|INSERT|G
-trivia|schema||trivia_explosion|localhost|LOCK TABLES|G
-trivia|schema||trivia_explosion|localhost|REFERENCES|G
-trivia|schema||trivia_explosion|localhost|SELECT|G
-trivia|schema||trivia_explosion|localhost|SHOW VIEW|G
-trivia|schema||trivia_explosion|localhost|TRIGGER|G
-trivia|schema||trivia_explosion|localhost|UPDATE|G
-trivia\\_explosion|schema||trivia_explosion|localhost|ALTER|G
-trivia\\_explosion|schema||trivia_explosion|localhost|ALTER ROUTINE|G
-trivia\\_explosion|schema||trivia_explosion|localhost|CREATE|G
-trivia\\_explosion|schema||trivia_explosion|localhost|CREATE ROUTINE|G
-trivia\\_explosion|schema||trivia_explosion|localhost|CREATE TEMPORARY TABLES|G
-trivia\\_explosion|schema||trivia_explosion|localhost|CREATE VIEW|G
-trivia\\_explosion|schema||trivia_explosion|localhost|DELETE|G
-trivia\\_explosion|schema||trivia_explosion|localhost|DROP|G
-trivia\\_explosion|schema||trivia_explosion|localhost|EVENT|G
-trivia\\_explosion|schema||trivia_explosion|localhost|EXECUTE|G
-trivia\\_explosion|schema||trivia_explosion|localhost|INDEX|G
-trivia\\_explosion|schema||trivia_explosion|localhost|INSERT|G
-trivia\\_explosion|schema||trivia_explosion|localhost|LOCK TABLES|G
-trivia\\_explosion|schema||trivia_explosion|localhost|REFERENCES|G
-trivia\\_explosion|schema||trivia_explosion|localhost|SELECT|G
-trivia\\_explosion|schema||trivia_explosion|localhost|SHOW VIEW|G
-trivia\\_explosion|schema||trivia_explosion|localhost|TRIGGER|G
-trivia\\_explosion|schema||trivia_explosion|localhost|UPDATE|G</Grants>
-      <ServerVersion>8.1.0</ServerVersion>
-    </root>
+    <root id="1"/>
     <collation id="2" parent="1" name="armscii8_general_ci">
       <Charset>armscii8</Charset>
       <DefaultForCharset>1</DefaultForCharset>

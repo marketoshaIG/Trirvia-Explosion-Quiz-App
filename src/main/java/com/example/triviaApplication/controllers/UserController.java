@@ -1,9 +1,9 @@
 package com.example.triviaApplication.controllers;
 import com.example.triviaApplication.models.Question;
+import com.example.triviaApplication.models.Quiz;
+import com.example.triviaApplication.models.QuizAttempt;
 import com.example.triviaApplication.models.User;
-import com.example.triviaApplication.repositories.ImageRepository;
-import com.example.triviaApplication.repositories.QuestionRepository;
-import com.example.triviaApplication.repositories.UserRepository;
+import com.example.triviaApplication.repositories.*;
 import com.example.triviaApplication.security.JwtTokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
@@ -14,6 +14,7 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.web.bind.annotation.*;
 
 import java.io.IOException;
+import java.security.Principal;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -31,8 +32,8 @@ import com.example.triviaApplication.services.ImageDataService;
 public class UserController {
     private final UserRepository userRepository;
     private final QuestionRepository questionRepository;
-
     private final JavaMailSender javaMailSender;
+
     @Autowired
     AuthenticationManager authenticationManager;
 
@@ -41,6 +42,12 @@ public class UserController {
 
     @Autowired
     PasswordEncoder encoder;
+
+    @Autowired
+    private QuizAttemptRepository quizAttemptRepository;
+
+    @Autowired
+    private QuizRepository quizRepository;
 
     @Autowired
     ImageRepository imageRepository;
@@ -175,6 +182,76 @@ public class UserController {
         // Send the email
         javaMailSender.send(message);
     }
+
+    @GetMapping("/profile/info")
+    public ResponseEntity<User> getUserProfileInfo(Principal principal) {
+        // Fetch the currently logged-in user's profile information
+        String username = principal.getName();
+        User user = userRepository.findByUsername(username).orElse(null);
+
+        if (user != null) {
+            // Fetch count of quizzes created by the user
+            long numOfQuizzes = quizRepository.countByUserId(user.getId());
+            // Set the count of quizzes in the user object
+            user.setNumOfQuizzes(numOfQuizzes);
+
+            return new ResponseEntity<>(user, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/profile/quizzes")
+    public ResponseEntity<List<Quiz>> getUserProfileQuizzes(Principal principal) {
+        // Fetch quizzes created by the currently logged-in user
+        String username = principal.getName();
+        Optional<User> optionalUser = userRepository.findByUsername(username);
+
+        if (optionalUser.isPresent()) {
+            User user = optionalUser.get();
+            List<Quiz> quizzes = quizRepository.findByUserId(user.getId());
+            return new ResponseEntity<>(quizzes, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/profile/attempts")
+    public ResponseEntity<List<QuizAttempt>> getUserProfileQuizAttempts(Principal principal) {
+        // Fetch quiz attempts made by the currently logged-in user
+        String username = principal.getName();
+        Optional<User> optionalUser = userRepository.findByUsername(username);
+
+        if (optionalUser.isPresent()) {
+            User user = optionalUser.get();
+            List<QuizAttempt> attempts = quizAttemptRepository.findByUserId(user.getId());
+            return new ResponseEntity<>(attempts, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @PutMapping("/profile/edit")
+    public ResponseEntity<User> editUserProfile(@RequestBody User updatedUser, Principal principal) {
+        // Update the profile of the currently logged-in user
+        String username = principal.getName();
+        Optional<User> optionalUser = userRepository.findByUsername(username);
+
+        if (optionalUser.isPresent()) {
+            User user = optionalUser.get();
+            // Update user information
+            user.setUsername(updatedUser.getUsername());
+            user.setEmail(updatedUser.getEmail());
+            // Update other fields as needed
+
+            // Save the updated user
+            User savedUser = userRepository.save(user);
+            return new ResponseEntity<>(savedUser, HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+    }
+
 }
 
 

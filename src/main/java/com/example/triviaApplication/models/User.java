@@ -33,6 +33,8 @@ public class User {
     @Column(name = "profile_picture", length = 10485760)
     private byte[] profilePicture;
 
+    private long numOfQuizzes;
+
 //    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 //    private Set<Question> questions;
 
@@ -103,4 +105,11 @@ public class User {
         this.is_email_verified = is_email_verified;
     }
 
+    public long getNumOfQuizzes() {
+        return numOfQuizzes;
+    }
+
+    public void setNumOfQuizzes(long numOfQuizzes) {
+        this.numOfQuizzes = numOfQuizzes;
+    }
 }

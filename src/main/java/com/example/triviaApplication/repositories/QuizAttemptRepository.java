@@ -9,4 +9,5 @@ import java.util.Optional;
 @Repository
 public interface QuizAttemptRepository extends JpaRepository<QuizAttempt, Long> {
     List<QuizAttempt> findByQuizIdAndUserId(Long quizId, Long userId);
+    List<QuizAttempt> findByUserId(Long userId);
 }
