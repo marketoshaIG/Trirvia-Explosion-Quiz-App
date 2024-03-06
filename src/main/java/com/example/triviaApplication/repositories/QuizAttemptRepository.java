@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import java.util.Optional;
-
+//need to add more styles
 @Repository
 public interface QuizAttemptRepository extends JpaRepository<QuizAttempt, Long> {
     List<QuizAttempt> findByQuizIdAndUserId(Long quizId, Long userId);
