@@ -123,5 +123,6 @@ const Navbar = () => {
         </header>
     );
 };
+// correct profile picture
 
 export default Navbar;

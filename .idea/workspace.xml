@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="843f8013-a532-4783-ad37-5c6a94f5ae86" name="Changes" comment="Modified the Profile Page, added quiz count and user info">
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="843f8013-a532-4783-ad37-5c6a94f5ae86" name="Changes" comment="added few more changes" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -160,6 +157,7 @@
       <workItem from="1706725486607" duration="12000" />
       <workItem from="1707837868289" duration="5375000" />
       <workItem from="1709225946649" duration="661000" />
+      <workItem from="1709744486367" duration="92000" />
     </task>
     <task id="LOCAL-00001" summary="last minute changes in main">
       <option name="closed" value="true" />
@@ -185,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1707844180904</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added few more changes">
+      <option name="closed" value="true" />
+      <created>1709744569041</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709744569041</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,6 +212,7 @@
     <MESSAGE value="last minute changes in main" />
     <MESSAGE value="added backgroung img to src" />
     <MESSAGE value="Modified the Profile Page, added quiz count and user info" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modified the Profile Page, added quiz count and user info" />
+    <MESSAGE value="added few more changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="added few more changes" />
   </component>
 </project>
