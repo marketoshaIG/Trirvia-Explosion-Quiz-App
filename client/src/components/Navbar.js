@@ -60,7 +60,7 @@ const Navbar = () => {
                     <li className="nav-item">
                         {isLoggedIn ? (
                             <Link to="/quizzes" className="nav-link">
-                                My Quizzes
+                                Saved Quizzes
                             </Link>
                         ) : ('')}
                     </li>
